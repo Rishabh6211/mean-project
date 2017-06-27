@@ -1,0 +1,36 @@
+
+ <div >
+    <h2>welcome</h2>
+    <p>{{user.username}}</p><hr/>
+    <h3> Product list</h3>
+    <br><br><br>
+    <h1>User's list</h1>
+    <form >
+    <table class="table table-striped">
+     <tr>
+            
+            <td><b><font color="red">Select</td>
+            <td><b><font color="red">Username</td> 
+            <td><b><font color="red">Email</td> 
+        </tr>
+       
+            
+            <td><input ng-model="userm.username" class="form-control"/></td>
+            <td><input ng-model="userm.email" class="form-control"/></td>
+            
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td><button ng-click="remove()">Delete</button>
+            
+        </tr>
+        <tr ng-repeat="userm in users">
+            <td><input type="checkbox" ng-model="check" value="userm.username" ng-click="select(userm)" ></td> 
+            <td>{{userm.username}}</td>
+            <td>{{userm.email}}</td> 
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            
+        </tr>
+    </table>
+    </form>
+</div>

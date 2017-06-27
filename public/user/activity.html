@@ -1,0 +1,37 @@
+<div >
+    <h2>welcome</h2>
+    <p>{{user.type}}</p><hr/>
+    <h3> Product list</h3>
+    <br><br><br>   
+    <form>
+    <table class="table table-striped">
+
+     <tr>
+            
+            <td><b><font color="red">PRODUCT NAME</td>
+            <td><b><font color="red">PRICE</td> 
+        </tr>
+       
+        <tr>
+            
+            <td><input ng-model="product.name" class="form-control"/></td>
+            <td><input ng-model="product.price" class="form-control"/></td>
+            
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td><button ng-click="update()">update</button></td>
+            <td><button ng-click="add()">add</button>
+            <!--<td><button ng-click="remove()">delete</button> -->
+        </tr>
+        <tr ng-repeat="product in products">
+            <td><input type="checkbox" ng-model="check" value="product" ng-click="select(product)"></td> 
+            <td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <!-- <td><button ng-click="select(product)">select</button></td> -->
+        </tr>
+    </table>
+   </form>
+
+</div>

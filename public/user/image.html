@@ -1,0 +1,20 @@
+<h1>My Profile</h1>
+<div><b>My Name :</b> {{user.username}}</div>
+<div><b>My Profile :</b> <img src="/getimage" style="width:100px;height:100px;"></div>
+<form >
+     <input 
+                type="file" 
+                ngf-select 
+                ng-model="file" 
+                name="file" 
+                ngf-pattern="'image/*'"
+                accept="image/*" 
+                ngf-max-size="20MB" 
+                />
+            <img style="width:100px;" ng-show="!!file" ngf-thumbnail="file "/>
+            <!-- <i ng-show="upload_form.file.$error.required">*required</i><br>
+            <i ng-show="up.upload_form.file.$error.maxSize">File too large 
+            {{up.file.size / 1000000|number:1}}MB: max 20MB</i> -->
+            <button type="submit" ng-click="submit()">submit</button>
+           <!-- <p>{{up.progress}}</p> -->
+ </form>

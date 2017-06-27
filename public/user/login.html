@@ -1,0 +1,30 @@
+
+    <style>
+        body     { padding-top:30px; }
+    </style>
+     
+    <div class="container">
+    <!-- PAGE HEADER -->
+    <div class="page-header"><h1>Login</h1></div>
+    <!-- pass in the variable if our form is valid or invalid -->
+    <form name="userForm" ng-submit="register()" novalidate>
+        <!-- EMAIL -->
+        <div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">
+            <label>Name</label>
+            <input type="text" name="name" class="form-control" ng-model="user.username">
+            <p ng-show="userForm.username.$invalid && !userForm.username.$pristine" class="help-block">Enter a valid name.</p>
+        </div>
+       <!--  <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
+            <label>Email</label>
+            <input type="email" name="email" class="form-control" ng-model="user.email">
+            <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</p>
+        </div> -->
+         <div class="form-group" ng-class="{ 'has-error' : userForm.password.$invalid && !userForm.password.$pristine }">
+            <label>Password</label>
+            <input type="password" name="password" class="form-control" ng-model="user.password" ng-minlength="3"  >
+            <p ng-show="userForm.password.$error.minlength" class="help-block">password is too short.</p>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+  </body>
+</html>
